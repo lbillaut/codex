@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Job Application Tracker</h1>
+
+    <section class="card">
+      <h2 id="form-title">Add Job</h2>
+      <form id="job-form">
+        <input type="hidden" id="job-id" />
+        <div class="grid">
+          <label>Title<input id="title" required /></label>
+          <label>Company<input id="company" required /></label>
+          <label>Location<input id="location" /></label>
+          <label>Link<input id="link" type="url" /></label>
+          <label>Salary<input id="salary" /></label>
+          <label>Status
+            <select id="status">
+              <option>Applied</option>
+              <option>Interviewing</option>
+              <option>Offer</option>
+              <option>Rejected</option>
+              <option>Accepted</option>
+            </select>
+          </label>
+        </div>
+        <label>Notes<textarea id="notes" rows="3"></textarea></label>
+        <div class="actions">
+          <button type="submit" id="save-btn">Save Job</button>
+          <button type="button" id="cancel-btn" class="secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Jobs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Link</th>
+            <th>Salary</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="jobs-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
